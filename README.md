@@ -8,6 +8,16 @@ for your favourite geeky graphing solution.
 1. Clone or copy this script into your save game folder e.g. `%APPDATA%\StardewValley\Saves\Farmname_12345`
 2. In a console, `ruby track.rb`
 
+### Cloning into a non-empty directory
+
+In your savegame directory:
+
+```
+git init
+git remote add https://github.com/soundasleep/stardew-valley-tracker origin
+git pull origin main
+```
+
 ## Output
 
 ```csv
