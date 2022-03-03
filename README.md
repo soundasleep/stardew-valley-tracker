@@ -14,7 +14,7 @@ In your savegame directory:
 
 ```
 git init
-git remote add https://github.com/soundasleep/stardew-valley-tracker origin
+git remote add origin https://github.com/soundasleep/stardew-valley-tracker
 git pull origin main
 ```
 
