@@ -31,6 +31,7 @@ end
 	"copperFound", "ironFound", "coalFound", "coinsFound", "goldFound", "iridiumFound", "barsSmelted",
 	"beveragesMade", "preservesMade", "piecesOfTrashRecycled", "mysticStonesCrushed",
 	"weedsEliminated", "sticksChopped", "notesFound", "questsCompleted", "starLevelCropsShipped",
+	"cheeseMade",
 ].each do |v|
 	maps["stats/#{v}"] = "//Farmer/stats/#{v}"
 end
@@ -59,7 +60,8 @@ while true
 			"craftingRecipes" => xml.xpath("count(//Farmer/craftingRecipes/item)").to_i,
 		}
 		maps.each do |k, v|
-			values[k] = xml.at_xpath(v).content
+			xpath_value = xml.at_xpath(v)
+			values[k] = xpath_value.nil? ? 0 : xpath_value.content
 		end
 
 		puts ">> #{values}"
