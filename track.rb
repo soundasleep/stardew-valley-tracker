@@ -33,7 +33,7 @@ end
 	"weedsEliminated", "sticksChopped", "notesFound", "questsCompleted", "starLevelCropsShipped",
 	"cheeseMade",
 ].each do |v|
-	maps["stats/#{v}"] = "//Farmer/stats/#{v}"
+	maps["stats/#{v}"] = "//Farmer/stats/Values/item/key/string[text()='#{v}']/../../value/unsignedInt"
 end
 
 if !File.exist?(out)
@@ -65,6 +65,7 @@ while true
 		end
 
 		puts ">> #{values}"
+		fail "could not find daysPlayed: different file format?" if values["stats/daysPlayed"] == 0
 
 		File.open(out, "a") do |fp|
 			puts "Writing to #{out}..."
